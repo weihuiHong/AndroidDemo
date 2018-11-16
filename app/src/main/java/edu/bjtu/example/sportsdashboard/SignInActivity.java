@@ -37,7 +37,7 @@ public class SignInActivity extends AppCompatActivity {
         signUpBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SignInActivity.this, SignUpActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);;
+                Intent intent = new Intent(SignInActivity.this, SignUpActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
             }
         });
@@ -47,8 +47,8 @@ public class SignInActivity extends AppCompatActivity {
         new Thread(new Runnable() {
             @Override
             public void run(){
-                EditText username = (EditText)findViewById (R.id.sign_in_userId);
-                EditText password = (EditText)findViewById (R.id.sign_in_pass);
+                EditText username = findViewById (R.id.sign_in_userId);
+                EditText password = findViewById (R.id.sign_in_pass);
                 String url = baseURL + "?name=" + username.getText().toString().trim() + "&pass=" + password.getText().toString().trim();
                 HttpClient httpCient = new DefaultHttpClient();
                 HttpGet httpGet = new HttpGet(url);
